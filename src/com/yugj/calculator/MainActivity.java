@@ -12,8 +12,8 @@ import com.yugj.calcutor.R;
 
 
 public class MainActivity extends Activity {
-    private static MediaPlayer player = null;// 播放器引用
-    private static Vibrator vibrator = null;//震动
+    private static MediaPlayer player = null;
+    private static Vibrator vibrator = null;
     private static final Long VIBRATOR_LENGTH = 50L;
     private static ButtonListener numberButtonListener = null;
     private static ButtonListener operateButtonListener = null;
@@ -64,7 +64,7 @@ public class MainActivity extends Activity {
         @Override
         public void onClick(View v) {
             super.onClick(v);
-            //do sth
+            System.out.println("test");
         }
     }
 
@@ -93,7 +93,7 @@ public class MainActivity extends Activity {
     }
 
     /**
-     * 相应速度慢，暂时去除
+     * 
      * @param musicId
      */
     private void playMusic(int musicId) {
