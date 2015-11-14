@@ -1,0 +1,28 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+<!-- 边框颜色值 -->
+<item>
+    <shape>
+        <solid android:color="#8d9092" />
+        <corners android:radius="5dip" />
+    </shape>
+</item>
+
+<!-- 主体背景颜色值 -->
+<item android:bottom="1dp" android:right="1dp" android:top="1dp" android:left="1dp">
+    <shape>
+        <!--背景颜色-->
+        <!--<solid android:color="#d7dddd" />-->
+        <!--背景颜色渐变效果-->
+        <gradient android:startColor="#e1e6e6" android:endColor="#c3cacc" android:angle="270"/>
+        <!--圆角-->
+        <corners android:radius="5dip" />
+
+        <padding
+            android:bottom="10dp"
+            android:left="10dp"
+            android:right="10dp"
+            android:top="10dp" />
+    </shape>
+</item>
+</layer-list>
+
