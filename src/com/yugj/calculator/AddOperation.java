@@ -6,6 +6,6 @@ package com.yugj.calculator;
 public class AddOperation extends Operation {
     @Override
     public Double execute() { 
-        return valueA + valueB;
+        return valueA + valueB; 
     }
 }
