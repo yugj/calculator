@@ -13,7 +13,7 @@
         android:layout_weight="3">
         <TextView
             android:id="@+id/screen"
-            android:text="test"
+            android:text="@string/zero"
             android:layout_marginBottom="@dimen/calculator_screen_bottom"
             android:layout_width="match_parent"
             android:layout_height="match_parent"

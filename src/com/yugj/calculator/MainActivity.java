@@ -4,14 +4,23 @@ import android.app.Activity;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Vibrator;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.yugj.calcutor.R;
 
 
 public class MainActivity extends Activity {
+	
+	private static StringBuffer valueA = new StringBuffer();
+	private static StringBuffer valueB = new StringBuffer();
+	private static StringBuffer displayValue = new StringBuffer();
+	private OperatorEnum operator = null;
+	
+	
     private static MediaPlayer player = null;
     private static Vibrator vibrator = null;
     private static final Long VIBRATOR_LENGTH = 50L;
@@ -38,6 +47,8 @@ public class MainActivity extends Activity {
     private static Button zeroBtn = null;
     private static Button pointBtn = null;
     private static Button equalBtn = null;
+    
+    private static TextView screen = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,10 +75,18 @@ public class MainActivity extends Activity {
         @Override
         public void onClick(View v) {
             super.onClick(v);
-            System.out.println("test");
+            Button clickedButton = (Button)v;
+            if(operator == null ) {
+            	valueA.append(clickedButton.getText());
+            	screen.setText(valueA);
+            } else {
+            	valueB.append(clickedButton.getText());
+            	screen.setText(valueA + operator.toString() + valueB);
+            }
+            
         }
     }
-
+    
     private final class OperateButtonListener extends ButtonListener {
         @Override
         public void onClick(View v) {
@@ -90,6 +109,10 @@ public class MainActivity extends Activity {
             super.onClick(v);
             //do sth
         }
+    }
+    
+    private void display() { 
+    	
     }
 
     /**
@@ -122,6 +145,7 @@ public class MainActivity extends Activity {
         equalBtn = getButton(R.id.id_equal);
         zeroBtn = getButton(R.id.id_zero);
         pointBtn = getButton(R.id.id_point);
+        screen = (TextView)findViewById(R.id.screen);
 
         clearBtn.setOnClickListener(clearButtonListener);
         deleteBtn.setOnClickListener(clearButtonListener);
